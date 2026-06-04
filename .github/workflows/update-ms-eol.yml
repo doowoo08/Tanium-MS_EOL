@@ -1,24 +1,20 @@
-name: Update Microsoft EOL Data
+name: Update EOL Data
 
 on:
-  # 매주 월요일 오전 9시 (UTC) 자동 실행
   schedule:
-    - cron: '0 9 * * 1'
-
-  # 수동 실행 (GitHub UI에서 Run workflow 버튼)
+    - cron: '0 9 * * 1'   # 매주 월요일 오전 9시 (UTC)
   workflow_dispatch:
     inputs:
-      product:
-        description: '특정 제품만 업데이트 (비워두면 전체)'
+      vendor:
+        description: '수집 벤더 (microsoft / adobe / edge / all)'
         required: false
-        default: ''
+        default: 'all'
 
 jobs:
   update-eol-data:
     runs-on: ubuntu-latest
-
     permissions:
-      contents: write   # 결과 파일을 repo에 커밋하기 위해 필요
+      contents: write
 
     steps:
       - name: Checkout repository
@@ -29,15 +25,18 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Install dependencies
+        run: |
+          pip install selenium webdriver-manager requests
+
+      - name: Install Chrome (for Adobe Selenium)
+        uses: browser-actions/setup-chrome@v1
+
       - name: Run EOL data collector
         run: |
-          if [ -n "${{ github.event.inputs.product }}" ]; then
-            python3 Generate_MS_Lifecycle_JSON.py \
-              --output ./data \
-              --product "${{ github.event.inputs.product }}"
-          else
-            python3 Generate_MS_Lifecycle_JSON.py --output ./data
-          fi
+          python3 Generate_EOL_JSON.py \
+            --vendor "${{ github.event.inputs.vendor || 'all' }}" \
+            --output ./data
 
       - name: Check for changes
         id: changes
@@ -50,7 +49,7 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/
-          git commit -m "chore: update MS lifecycle EOL data $(date +'%Y-%m-%d')"
+          git commit -m "chore: update EOL data $(date +'%Y-%m-%d') [vendor=${{ github.event.inputs.vendor || 'all' }}]"
           git push
 
       - name: No changes detected
