@@ -1,0 +1,9 @@
+{
+  "latest_major": 148,
+  "latest_version": "148.0.3967.96",
+  "published": "2026-05-30",
+  "policy": "Modern Lifecycle - only the latest major version is supported",
+  "note": "Installed version == latest_major → Supported / Lower → Not Latest",
+  "source": "https://edgeupdates.microsoft.com/api/products",
+  "fetched": "2026-06-04"
+}
