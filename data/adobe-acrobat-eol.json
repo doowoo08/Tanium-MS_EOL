@@ -1,0 +1,182 @@
+[
+  {
+    "cycle": "9.x",
+    "releaseLabel": "Acrobat Pro 9.x",
+    "releaseDate": "2008-06-23",
+    "eol": "2013-06-26",
+    "lts": false,
+    "link": "https://helpx.adobe.com/support/programs/eol-matrix.html",
+    "product": "Acrobat Pro"
+  },
+  {
+    "cycle": "2024",
+    "releaseLabel": "Acrobat Pro 2024 (formerly known as Acrobat Classic) 2024",
+    "releaseDate": "2024-07-15",
+    "eol": "2029-07-15",
+    "lts": false,
+    "link": "https://helpx.adobe.com/support/programs/eol-matrix.html",
+    "product": "Acrobat Pro 2024 (formerly known as Acrobat Classic)"
+  },
+  {
+    "cycle": "2020",
+    "releaseLabel": "Acrobat Pro 2020 2020",
+    "releaseDate": "2020-06-01",
+    "eol": "2025-06-01",
+    "lts": false,
+    "link": "https://helpx.adobe.com/support/programs/eol-matrix.html",
+    "product": "Acrobat Pro 2020"
+  },
+  {
+    "cycle": "2017",
+    "releaseLabel": "Acrobat Pro 2017 2017",
+    "releaseDate": "2017-06-06",
+    "eol": "2022-06-06",
+    "lts": false,
+    "link": "https://helpx.adobe.com/support/programs/eol-matrix.html",
+    "product": "Acrobat Pro 2017"
+  },
+  {
+    "cycle": "2015",
+    "releaseLabel": "Acrobat Pro 2015 (classic) 2015",
+    "releaseDate": "2015-04-07",
+    "eol": "2020-04-07",
+    "lts": false,
+    "link": "https://helpx.adobe.com/support/programs/eol-matrix.html",
+    "product": "Acrobat Pro 2015 (classic)"
+  },
+  {
+    "cycle": "9.x",
+    "releaseLabel": "Acrobat Pro Extended 9.x",
+    "releaseDate": "2008-06-23",
+    "eol": "2013-06-26",
+    "lts": false,
+    "link": "https://helpx.adobe.com/support/programs/eol-matrix.html",
+    "product": "Acrobat Pro Extended"
+  },
+  {
+    "cycle": "7.x",
+    "releaseLabel": "Acrobat Professional 7.x",
+    "releaseDate": "2004-12-28",
+    "eol": "2009-12-28",
+    "lts": false,
+    "link": "https://helpx.adobe.com/support/programs/eol-matrix.html",
+    "product": "Acrobat Professional"
+  },
+  {
+    "cycle": "8.x",
+    "releaseLabel": "Acrobat Professional 8.x",
+    "releaseDate": "2006-11-03",
+    "eol": "2011-11-03",
+    "lts": false,
+    "link": "https://helpx.adobe.com/support/programs/eol-matrix.html",
+    "product": "Acrobat Professional"
+  },
+  {
+    "cycle": "2020",
+    "releaseLabel": "Acrobat Reader 2020 2020",
+    "releaseDate": "2020-06-01",
+    "eol": "2025-06-01",
+    "lts": false,
+    "link": "https://helpx.adobe.com/support/programs/eol-matrix.html",
+    "product": "Acrobat Reader 2020"
+  },
+  {
+    "cycle": "2015",
+    "releaseLabel": "Acrobat Reader 2015 (classic) 2015",
+    "releaseDate": "2015-04-07",
+    "eol": "2020-04-07",
+    "lts": false,
+    "link": "https://helpx.adobe.com/support/programs/eol-matrix.html",
+    "product": "Acrobat Reader 2015 (classic)"
+  },
+  {
+    "cycle": "7.x",
+    "releaseLabel": "Acrobat Standard 7.x",
+    "releaseDate": "2004-12-28",
+    "eol": "2009-12-28",
+    "lts": false,
+    "link": "https://helpx.adobe.com/support/programs/eol-matrix.html",
+    "product": "Acrobat Standard"
+  },
+  {
+    "cycle": "8.x",
+    "releaseLabel": "Acrobat Standard 8.x",
+    "releaseDate": "2006-11-03",
+    "eol": "2011-11-03",
+    "lts": false,
+    "link": "https://helpx.adobe.com/support/programs/eol-matrix.html",
+    "product": "Acrobat Standard"
+  },
+  {
+    "cycle": "9.x",
+    "releaseLabel": "Acrobat Standard 9.x",
+    "releaseDate": "2008-06-23",
+    "eol": "2013-06-26",
+    "lts": false,
+    "link": "https://helpx.adobe.com/support/programs/eol-matrix.html",
+    "product": "Acrobat Standard"
+  },
+  {
+    "cycle": "2020",
+    "releaseLabel": "Acrobat Standard 2020 2020",
+    "releaseDate": "2020-06-01",
+    "eol": "2025-06-01",
+    "lts": false,
+    "link": "https://helpx.adobe.com/support/programs/eol-matrix.html",
+    "product": "Acrobat Standard 2020"
+  },
+  {
+    "cycle": "2017",
+    "releaseLabel": "Acrobat Standard 2017 2017",
+    "releaseDate": "2017-06-06",
+    "eol": "2022-06-06",
+    "lts": false,
+    "link": "https://helpx.adobe.com/support/programs/eol-matrix.html",
+    "product": "Acrobat Standard 2017"
+  },
+  {
+    "cycle": "2015",
+    "releaseLabel": "Acrobat Standard 2015 (classic) 2015",
+    "releaseDate": "2015-04-07",
+    "eol": "2020-04-07",
+    "lts": false,
+    "link": "https://helpx.adobe.com/support/programs/eol-matrix.html",
+    "product": "Acrobat Standard 2015 (classic)"
+  },
+  {
+    "cycle": "10",
+    "releaseLabel": "Acrobat X Pro 10",
+    "releaseDate": "2010-11-15",
+    "eol": "2015-11-15",
+    "lts": false,
+    "link": "https://helpx.adobe.com/support/programs/eol-matrix.html",
+    "product": "Acrobat X Pro"
+  },
+  {
+    "cycle": "10",
+    "releaseLabel": "Acrobat X Standard 10",
+    "releaseDate": "2010-11-15",
+    "eol": "2015-11-15",
+    "lts": false,
+    "link": "https://helpx.adobe.com/support/programs/eol-matrix.html",
+    "product": "Acrobat X Standard"
+  },
+  {
+    "cycle": "11",
+    "releaseLabel": "Acrobat XI Pro 11",
+    "releaseDate": "2012-10-15",
+    "eol": "2017-10-15",
+    "lts": false,
+    "link": "https://helpx.adobe.com/support/programs/eol-matrix.html",
+    "product": "Acrobat XI Pro"
+  },
+  {
+    "cycle": "11",
+    "releaseLabel": "Acrobat XI Standard 11",
+    "releaseDate": "2012-10-15",
+    "eol": "2017-10-15",
+    "lts": false,
+    "link": "https://helpx.adobe.com/support/programs/eol-matrix.html",
+    "product": "Acrobat XI Standard"
+  }
+]

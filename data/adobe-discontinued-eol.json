@@ -1,0 +1,65 @@
+[
+  {
+    "cycle": "&nbsp;",
+    "releaseLabel": "Creative Suite apps and suites &nbsp;",
+    "releaseDate": "2012-05-07",
+    "eol": "2017-05-31",
+    "lts": false,
+    "link": "https://helpx.adobe.com/support/programs/eol-matrix.html",
+    "product": "Creative Suite apps and suites"
+  },
+  {
+    "cycle": "32.0",
+    "releaseLabel": "Flash Player 32.0",
+    "releaseDate": "1996-01-01",
+    "eol": "2020-12-31",
+    "lts": false,
+    "link": "https://helpx.adobe.com/support/programs/eol-matrix.html",
+    "product": "Flash Player"
+  },
+  {
+    "cycle": "4.9.7",
+    "releaseLabel": "Illustrator Draw 4.9.7",
+    "releaseDate": "2021-07-19",
+    "eol": "2022-01-10",
+    "lts": false,
+    "link": "https://helpx.adobe.com/support/programs/eol-matrix.html",
+    "product": "Illustrator Draw"
+  },
+  {
+    "cycle": "2018.1",
+    "releaseLabel": "Muse 2018.1",
+    "releaseDate": "2012-05-05",
+    "eol": "2020-03-26",
+    "lts": false,
+    "link": "https://helpx.adobe.com/support/programs/eol-matrix.html",
+    "product": "Muse"
+  },
+  {
+    "cycle": "iOS: 1.5 Android: 1.4",
+    "releaseLabel": "Photoshop Camera iOS: 1.5 Android: 1.4",
+    "releaseDate": "2020-06-09",
+    "eol": "2023-01-19",
+    "lts": false,
+    "link": "https://helpx.adobe.com/support/programs/eol-matrix.html",
+    "product": "Photoshop Camera"
+  },
+  {
+    "cycle": "4.9.8",
+    "releaseLabel": "Photoshop Sketch 4.9.8",
+    "releaseDate": "2021-07-19",
+    "eol": "2022-01-10",
+    "lts": false,
+    "link": "https://helpx.adobe.com/support/programs/eol-matrix.html",
+    "product": "Photoshop Sketch"
+  },
+  {
+    "cycle": "iOS: 2.1.2 Android: 1.1.6.1316",
+    "releaseLabel": "Premiere Clip iOS: 2.1.2 Android: 1.1.6.1316",
+    "releaseDate": "2014-10-06",
+    "eol": "2019-09-17",
+    "lts": false,
+    "link": "https://helpx.adobe.com/support/programs/eol-matrix.html",
+    "product": "Premiere Clip"
+  }
+]

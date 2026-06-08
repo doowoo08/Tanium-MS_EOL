@@ -1,0 +1,47 @@
+[
+  {
+    "cycle": "2022",
+    "releaseLabel": "Visual Studio 2022",
+    "releaseDate": "2021-11-08",
+    "eol": "2032-01-13",
+    "lts": false,
+    "link": "https://learn.microsoft.com/en-us/lifecycle/products/visual-studio-2022",
+    "support": "2027-01-12"
+  },
+  {
+    "cycle": "2019",
+    "releaseLabel": "Visual Studio 2019",
+    "releaseDate": "2019-04-02",
+    "eol": "2029-04-10",
+    "lts": false,
+    "link": "https://learn.microsoft.com/en-us/lifecycle/products/visual-studio-2019",
+    "support": "2024-04-09"
+  },
+  {
+    "cycle": "2017",
+    "releaseLabel": "Visual Studio 2017",
+    "releaseDate": "2017-03-07",
+    "eol": "2027-04-13",
+    "lts": false,
+    "link": "https://learn.microsoft.com/en-us/lifecycle/products/visual-studio-2017",
+    "support": "2022-04-12"
+  },
+  {
+    "cycle": "2015",
+    "releaseLabel": "Visual Studio 2015",
+    "releaseDate": "2015-07-20",
+    "eol": "2025-10-14",
+    "lts": false,
+    "link": "https://learn.microsoft.com/en-us/lifecycle/products/visual-studio-2015",
+    "support": "2020-10-13"
+  },
+  {
+    "cycle": "2013",
+    "releaseLabel": "Visual Studio 2013",
+    "releaseDate": "2014-01-15",
+    "eol": "2024-04-09",
+    "lts": false,
+    "link": "https://learn.microsoft.com/en-us/lifecycle/products/visual-studio-2013",
+    "support": "2019-04-09"
+  }
+]
