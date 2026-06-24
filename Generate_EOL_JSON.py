@@ -152,11 +152,18 @@ def parse_date(raw: str) -> str:
 def parse_lifecycle_page(html: str, slug: str):
     rows = re.findall(r"<tr[^>]*>(.*?)</tr>", html, re.DOTALL)
     results = []
+    esu_dates = []
     for row in rows:
         cells = re.findall(r"<td[^>]*>(.*?)</td>", row, re.DOTALL)
         if not cells: continue
         clean = [re.sub(r"<[^>]+>", "", c).strip() for c in cells]
         if not any(re.search(r"\d{4}-\d{2}-\d{2}", c) for c in clean): continue
+        # ESU 행: 3컬럼 + "Extended Security Updates" 포함
+        if len(clean) == 3 and "extended security" in clean[0].lower():
+            esu_end = parse_date(clean[2])
+            if esu_end:
+                esu_dates.append(esu_end)
+            continue
         if len(clean) >= 4:
             listing, start, mainstream, extended = clean[0], parse_date(clean[1]), parse_date(clean[2]), parse_date(clean[3])
         elif len(clean) == 3:
@@ -165,9 +172,10 @@ def parse_lifecycle_page(html: str, slug: str):
             continue
         results.append({"listing": listing, "releaseDate": start,
                          "mainstream": mainstream, "eol": extended or mainstream})
-    return results
+    esu_end = max(esu_dates) if esu_dates else None
+    return results, esu_end
 
-def build_ms_entry(cycle: str, slug: str, rows: list) -> dict:
+def build_ms_entry(cycle: str, slug: str, rows: list, esu_end: str = None) -> dict:
     if not rows: return None
     row = rows[0]
     eol_val = row["eol"] if row["eol"] else False
@@ -176,6 +184,8 @@ def build_ms_entry(cycle: str, slug: str, rows: list) -> dict:
              "link": f"{MS_LIFECYCLE_BASE}/{slug}"}
     if row.get("mainstream") and row["mainstream"] != row["eol"]:
         entry["support"] = row["mainstream"]
+    if esu_end:
+        entry["extendedSupport"] = esu_end
     return entry
 
 def generate_ms_fixed(output_dir: Path, product_filter: str = None):
@@ -194,7 +204,7 @@ def generate_ms_fixed(output_dir: Path, product_filter: str = None):
             print(f"  Fetching: {slug} ...", end=" ", flush=True)
             html = fetch_page(slug)
             if not html: print("SKIP"); continue
-            rows = parse_lifecycle_page(html, slug)
+            rows, _ = parse_lifecycle_page(html, slug)
             print(f"OK ({len(rows)} rows)")
             for cycle, label in meta.get("version_map", {}).items():
                 matched = [r for r in rows if label.lower() in r["listing"].lower()]
@@ -206,12 +216,13 @@ def generate_ms_fixed(output_dir: Path, product_filter: str = None):
                 print(f"  Fetching: {slug} ...", end=" ", flush=True)
                 html = fetch_page(slug)
                 if not html: print("SKIP"); continue
-                rows = parse_lifecycle_page(html, slug)
+                rows, esu_end = parse_lifecycle_page(html, slug)
                 if not rows: print("SKIP (날짜 없음)"); continue
-                entry = build_ms_entry(cycle, slug, rows)
+                entry = build_ms_entry(cycle, slug, rows, esu_end)
                 if entry:
                     eol_list.append(entry)
-                    print(f"OK  eol={entry.get('eol','?')}")
+                    ext = f"  extendedSupport={entry['extendedSupport']}" if "extendedSupport" in entry else ""
+                    print(f"OK  eol={entry.get('eol','?')}{ext}")
                 else: print("SKIP")
                 time.sleep(0.5)
 
