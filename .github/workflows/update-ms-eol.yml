@@ -50,6 +50,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/
           git commit -m "chore: update EOL data $(date +'%Y-%m-%d') [vendor=${{ github.event.inputs.vendor || 'all' }}]"
+          git pull --rebase origin main
           git push
 
       - name: No changes detected
