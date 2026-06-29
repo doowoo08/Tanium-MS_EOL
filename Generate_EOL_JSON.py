@@ -12,7 +12,6 @@ endoflife.date 호환 JSON 포맷으로 생성합니다.
   [Microsoft Fixed Lifecycle]
     ms-msexchange-eol.json     Exchange Server
     ms-sharepoint-eol.json     SharePoint
-    ms-visual-studio-eol.json  Visual Studio
     ms-office-eol.json         Microsoft Office / Microsoft 365
     ms-dotnetfx-eol.json       .NET Framework
     ms-visual-cpp-eol.json     Visual C++ Redistributable
@@ -68,14 +67,6 @@ FIXED_PRODUCTS = {
             ("Subscription Edition", "sharepoint-server-subscription-edition"),
             ("2019", "sharepoint-server-2019"), ("2016", "sharepoint-server-2016"),
             ("2013", "sharepoint-server-2013"),
-        ]
-    },
-    "ms-visual-studio-eol.json": {
-        "description": "Microsoft Visual Studio",
-        "items": [
-            ("2022", "visual-studio-2022"), ("2019", "visual-studio-2019"),
-            ("2017", "visual-studio-2017"), ("2015", "visual-studio-2015"),
-            ("2013", "visual-studio-2013"),
         ]
     },
     "ms-office-eol.json": {
@@ -290,6 +281,7 @@ ENDOFLIFE_PRODUCTS = {
     "perl-eol.json":                "perl",
     "erlang-eol.json":              "erlang",
     "scala-eol.json":               "scala",
+    "visual-studio-eol.json":       "visual-studio",
     "powershell-eol.json":          "powershell",
     "kubernetes-eol.json":          "kubernetes",
     "docker-eol.json":              "docker-engine",
