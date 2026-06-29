@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       vendor:
-        description: '수집 벤더 (microsoft / adobe / edge / all)'
+        description: '수집 벤더 (microsoft / edge / endoflife / all)'
         required: false
         default: 'all'
 
@@ -18,19 +18,15 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: |
-          pip install selenium webdriver-manager requests
-
-      - name: Install Chrome (for Adobe Selenium)
-        uses: browser-actions/setup-chrome@v1
+        run: pip install requests
 
       - name: Run EOL data collector
         run: |
@@ -50,7 +46,6 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/
           git commit -m "chore: update EOL data $(date +'%Y-%m-%d') [vendor=${{ github.event.inputs.vendor || 'all' }}]"
-          git pull --rebase origin main
           git push
 
       - name: No changes detected
