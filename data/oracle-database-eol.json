@@ -1,0 +1,109 @@
+[
+  {
+    "cycle": "23",
+    "releaseLabel": "26ai",
+    "releaseDate": "2023-09-19",
+    "lts": true,
+    "eol": "2031-12-31",
+    "link": "https://docs.oracle.com/en/database/oracle/oracle-database/26/nfcoa/index.html",
+    "extendedSupport": true
+  },
+  {
+    "cycle": "21",
+    "releaseLabel": "21c",
+    "releaseDate": "2021-08-13",
+    "eol": "2027-07-31",
+    "link": "https://docs.oracle.com/en/database/oracle/oracle-database/21/whats-new.html",
+    "lts": false,
+    "extendedSupport": false
+  },
+  {
+    "cycle": "19",
+    "releaseLabel": "19c",
+    "releaseDate": "2019-04-25",
+    "lts": true,
+    "eol": "2029-12-31",
+    "link": "https://docs.oracle.com/en/database/oracle/oracle-database/19/whats-new.html",
+    "extendedSupport": "2032-12-31"
+  },
+  {
+    "cycle": "18",
+    "releaseLabel": "18c",
+    "releaseDate": "2018-07-23",
+    "eol": "2021-06-30",
+    "link": "https://docs.oracle.com/en/database/oracle/oracle-database/18/whats-new.html",
+    "lts": false,
+    "extendedSupport": false
+  },
+  {
+    "cycle": "12.2",
+    "releaseLabel": "12c Release 2",
+    "releaseDate": "2017-03-01",
+    "eol": "2022-03-31",
+    "link": "https://docs.oracle.com/en/database/oracle/oracle-database/12.2/whats-new.html",
+    "lts": false,
+    "extendedSupport": false
+  },
+  {
+    "cycle": "12.1",
+    "releaseLabel": "12c Release 1",
+    "lts": true,
+    "releaseDate": "2013-06-25",
+    "eol": "2018-07-31",
+    "link": "https://docs.oracle.com/database/121/index.htm",
+    "extendedSupport": "2022-07-31"
+  },
+  {
+    "cycle": "11.2",
+    "releaseLabel": "11g Release 2",
+    "lts": true,
+    "releaseDate": "2009-09-01",
+    "eol": "2015-01-31",
+    "link": "https://docs.oracle.com/cd/E11882_01/index.htm",
+    "extendedSupport": "2020-12-31"
+  },
+  {
+    "cycle": "11.1",
+    "releaseLabel": "11g Release 1",
+    "lts": true,
+    "releaseDate": "2007-08-09",
+    "eol": "2012-08-31",
+    "link": "https://docs.oracle.com/cd/B28359_01/index.htm",
+    "extendedSupport": "2015-08-31"
+  },
+  {
+    "cycle": "10.2",
+    "releaseLabel": "10g Release 2",
+    "lts": true,
+    "releaseDate": "2005-07-11",
+    "eol": "2010-07-31",
+    "link": "https://docs.oracle.com/cd/B19306_01/nav/portal_1.htm",
+    "extendedSupport": "2015-07-31"
+  },
+  {
+    "cycle": "10.1",
+    "releaseLabel": "10g Release 1",
+    "lts": true,
+    "releaseDate": "2003-09-08",
+    "eol": "2009-01-31",
+    "link": "https://www.oracle.com/database/technologies/database10g-doc.html",
+    "extendedSupport": "2012-01-01"
+  },
+  {
+    "cycle": "9.2",
+    "releaseLabel": "9i Release 2",
+    "lts": true,
+    "releaseDate": "2002-05-01",
+    "eol": "2007-07-31",
+    "link": "https://web.archive.org/web/20230921152724/https://www.oracle.com/database/technologies/oracle9i.html",
+    "extendedSupport": "2010-07-31"
+  },
+  {
+    "cycle": "9.0",
+    "releaseLabel": "9i Release 1",
+    "releaseDate": "2001-06-01",
+    "eol": "2003-12-31",
+    "lts": false,
+    "extendedSupport": false
+  }
+]

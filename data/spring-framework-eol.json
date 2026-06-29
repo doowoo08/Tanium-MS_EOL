@@ -1,0 +1,117 @@
+[
+  {
+    "cycle": "7.0",
+    "supportedJavaVersions": "17 - 25",
+    "supportedJakartaEEVersions": "11 - 12",
+    "releaseDate": "2025-11-30",
+    "eol": "2027-06-30",
+    "latest": "7.0.8",
+    "latestReleaseDate": "2026-06-08",
+    "lts": false,
+    "extendedSupport": "2028-06-30"
+  },
+  {
+    "cycle": "6.2",
+    "supportedJavaVersions": "17 - 25",
+    "supportedJakartaEEVersions": "9 - 10",
+    "releaseDate": "2024-11-30",
+    "eol": "2026-06-30",
+    "latest": "6.2.19",
+    "latestReleaseDate": "2026-06-08",
+    "lts": false,
+    "extendedSupport": "2032-06-30"
+  },
+  {
+    "cycle": "6.1",
+    "supportedJavaVersions": "17 - 23",
+    "supportedJakartaEEVersions": "9 - 10",
+    "releaseDate": "2023-11-30",
+    "eol": "2025-06-30",
+    "latest": "6.1.21",
+    "latestReleaseDate": "2025-06-12",
+    "lts": false,
+    "extendedSupport": "2026-06-30"
+  },
+  {
+    "cycle": "6.0",
+    "supportedJavaVersions": "17 - 21",
+    "supportedJakartaEEVersions": "9 - 10",
+    "releaseDate": "2022-11-30",
+    "eol": "2024-06-30",
+    "latest": "6.0.23",
+    "latestReleaseDate": "2024-08-14",
+    "lts": false,
+    "extendedSupport": "2025-08-31"
+  },
+  {
+    "cycle": "5.3",
+    "supportedJavaVersions": "8 - 21",
+    "supportedJakartaEEVersions": "7 - 8",
+    "releaseDate": "2020-10-31",
+    "eol": "2024-08-31",
+    "lts": true,
+    "latest": "5.3.39",
+    "latestReleaseDate": "2024-08-14",
+    "extendedSupport": "2029-06-30"
+  },
+  {
+    "cycle": "5.2",
+    "supportedJavaVersions": "8 - 11",
+    "supportedJakartaEEVersions": "N/A",
+    "releaseDate": "2019-09-30",
+    "eol": "2021-12-31",
+    "link": "https://github.com/spring-projects/spring-framework/releases/tag/v__LATEST__.RELEASE",
+    "latest": "5.2.25",
+    "latestReleaseDate": "2023-07-13",
+    "lts": false,
+    "extendedSupport": "2023-12-31"
+  },
+  {
+    "cycle": "5.1",
+    "supportedJavaVersions": "8 - 11",
+    "supportedJakartaEEVersions": "N/A",
+    "releaseDate": "2018-09-21",
+    "eol": "2020-12-31",
+    "link": "https://github.com/spring-projects/spring-framework/releases/tag/v__LATEST__.RELEASE",
+    "latest": "5.1.20",
+    "latestReleaseDate": "2020-12-09",
+    "lts": false,
+    "extendedSupport": "2022-12-31"
+  },
+  {
+    "cycle": "5.0",
+    "supportedJavaVersions": "8",
+    "supportedJakartaEEVersions": "N/A",
+    "releaseDate": "2017-09-28",
+    "eol": "2020-12-31",
+    "link": "https://github.com/spring-projects/spring-framework/releases/tag/v__LATEST__.RELEASE",
+    "latest": "5.0.20",
+    "latestReleaseDate": "2020-12-09",
+    "lts": false,
+    "extendedSupport": false
+  },
+  {
+    "cycle": "4.3",
+    "supportedJavaVersions": "6 - 8",
+    "supportedJakartaEEVersions": "N/A",
+    "releaseDate": "2016-06-10",
+    "eol": "2020-12-31",
+    "link": "https://github.com/spring-projects/spring-framework/releases/tag/v__LATEST__.RELEASE",
+    "latest": "4.3.30",
+    "latestReleaseDate": "2020-12-09",
+    "lts": false,
+    "extendedSupport": false
+  },
+  {
+    "cycle": "3.2",
+    "supportedJavaVersions": "5 - 6",
+    "supportedJakartaEEVersions": "N/A",
+    "releaseDate": "2012-12-13",
+    "eol": "2016-12-31",
+    "link": "https://github.com/spring-projects/spring-framework/releases/tag/v__LATEST__.RELEASE",
+    "latest": "3.2.18",
+    "latestReleaseDate": "2016-12-21",
+    "lts": false,
+    "extendedSupport": false
+  }
+]
