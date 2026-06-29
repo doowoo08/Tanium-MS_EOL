@@ -7,11 +7,9 @@ endoflife.date 호환 JSON 포맷으로 생성합니다.
 지원 벤더:
   - Microsoft  : Lifecycle 공식 페이지 스크래핑 (날짜 기반 EOL)
   - Microsoft  : Edge API (Modern Lifecycle 최신 버전 비교)
-  - Adobe      : EOL Matrix 페이지 (Selenium, JavaScript 렌더링 필요)
 
 출력 파일:
   [Microsoft Fixed Lifecycle]
-    ms-mssqlserver-eol.json    SQL Server
     ms-msexchange-eol.json     Exchange Server
     ms-sharepoint-eol.json     SharePoint
     ms-visual-studio-eol.json  Visual Studio
@@ -22,21 +20,13 @@ endoflife.date 호환 JSON 포맷으로 생성합니다.
   [Microsoft Modern Lifecycle]
     edge-latest.json           Microsoft Edge (+ Copilot, Edge WebView2 공용)
 
-  [Adobe]
-    adobe-acrobat-eol.json     Acrobat Pro / Standard / Reader (Classic Track)
-    adobe-elements-eol.json    Photoshop Elements / Premiere Elements
-    adobe-discontinued-eol.json Flash Player, Photoshop Camera 등 완전 종료 제품
-
 사용법:
     python3 Generate_EOL_JSON.py                        # 전체 생성
     python3 Generate_EOL_JSON.py --vendor microsoft     # Microsoft만
-    python3 Generate_EOL_JSON.py --vendor adobe         # Adobe만
     python3 Generate_EOL_JSON.py --vendor edge          # Edge Modern Lifecycle만
-    python3 Generate_EOL_JSON.py --product mssqlserver  # 특정 제품만
+    python3 Generate_EOL_JSON.py --product msexchange    # 특정 제품만
     python3 Generate_EOL_JSON.py --output ./files       # 저장 경로 지정
 
-사전 요구사항 (Adobe):
-    pip install selenium webdriver-manager
 
 Copyright (c) 2026 Tanium
 """
@@ -64,15 +54,6 @@ MS_LIFECYCLE_BASE = "https://learn.microsoft.com/en-us/lifecycle/products"
 # ══════════════════════════════════════════════════════════════════════════════
 
 FIXED_PRODUCTS = {
-    "ms-mssqlserver-eol.json": {
-        "description": "Microsoft SQL Server",
-        "items": [
-            ("2025", "sql-server-2025"), ("2022", "sql-server-2022"),
-            ("2019", "sql-server-2019"), ("2017", "sql-server-2017"),
-            ("2016", "sql-server-2016"), ("2014", "sql-server-2014"),
-            ("2012", "sql-server-2012"), ("2008", "sql-server-2008"),
-        ]
-    },
     "ms-msexchange-eol.json": {
         "description": "Microsoft Exchange Server",
         "items": [
@@ -271,143 +252,109 @@ def generate_edge(output_dir: Path):
         print(f"  ERROR: {e}")
 
 
+
 # ══════════════════════════════════════════════════════════════════════════════
-# PART 3: Adobe EOL Matrix (Selenium 필요)
+# PART 4: endoflife.date API
 # ══════════════════════════════════════════════════════════════════════════════
 
-ADOBE_EOL_URL = "https://helpx.adobe.com/support/programs/eol-matrix.html"
+ENDOFLIFE_DATE_BASE = "https://endoflife.date/api"
 
-def parse_date_us(s: str) -> str:
-    """MM/DD/YYYY → YYYY-MM-DD 변환"""
-    s = re.sub(r'\xa0.*', '', s).strip()  # extended 날짜 제거
-    m = re.search(r'(\d{1,2})/(\d{1,2})/(\d{4})', s)
-    if m:
-        return f"{m.group(3)}-{int(m.group(1)):02d}-{int(m.group(2)):02d}"
-    m2 = re.search(r'(\d{4})-(\d{2})-(\d{2})', s)
-    return f"{m2.group(1)}-{m2.group(2)}-{m2.group(3)}" if m2 else ""
+# eol_file → endoflife.date API slug
+ENDOFLIFE_PRODUCTS = {
+    "apache-http-server-eol.json":  "apache",
+    "nginx-eol.json":               "nginx",
+    "tomcat-eol.json":              "tomcat",
+    "mariadb-eol.json":             "mariadb",
+    "mssqlserver-eol.json":         "mssqlserver",
+    "mongodb-eol.json":             "mongodb",
+    "redis-eol.json":               "redis",
+    "oracle-database-eol.json":     "oracle-database",
+    "elasticsearch-eol.json":       "elasticsearch",
+    "mysql-eol.json":               "mysql",
+    "postgresql-eol.json":          "postgresql",
+    "chrome-eol.json":              "chrome",
+    "firefox-eol.json":             "firefox",
+    "oracle-jdk-eol.json":          "oracle-jdk",
+    "dotnet-eol.json":              "dotnet",
+    "python-eol.json":              "python",
+    "nodejs-eol.json":              "nodejs",
+    "eclipse-temurin-eol.json":     "eclipse-temurin",
+    "amazon-corretto-eol.json":     "amazon-corretto",
+    "microsoft-openjdk-eol.json":   "microsoft-build-of-openjdk",
+    "azul-zulu-eol.json":           "azul-zulu",
+    "ibm-semeru-eol.json":          "ibm-semeru",
+    "php-eol.json":                 "php",
+    "ruby-eol.json":                "ruby",
+    "go-eol.json":                  "go",
+    "rust-eol.json":                "rust",
+    "perl-eol.json":                "perl",
+    "erlang-eol.json":              "erlang",
+    "scala-eol.json":               "scala",
+    "powershell-eol.json":          "powershell",
+    "kubernetes-eol.json":          "kubernetes",
+    "docker-eol.json":              "docker-engine",
+    "containerd-eol.json":          "containerd",
+    "openssl-eol.json":             "openssl",
+    "spring-framework-eol.json":    "spring-framework",
+    "spring-boot-eol.json":         "spring-boot",
+    "log4j-eol.json":               "log4j",
+    "apache-kafka-eol.json":        "apache-kafka",
+    "rabbitmq-eol.json":            "rabbitmq",
+    "ansible-eol.json":             "ansible",
+    "terraform-eol.json":           "terraform",
+    "gitlab-eol.json":              "gitlab",
+    "jenkins-eol.json":             "jenkins",
+    "wordpress-eol.json":           "wordpress",
+    "notepad-plus-plus-eol.json":   "notepad-plus-plus",
+}
 
-def fetch_adobe_eol_html() -> str:
-    """Selenium headless Chrome으로 Adobe EOL Matrix 페이지 로드"""
+
+def fetch_endoflife_date(slug: str) -> list:
+    url = f"{ENDOFLIFE_DATE_BASE}/{slug}.json"
+    req = urllib.request.Request(url, headers={
+        **HEADERS,
+        "Accept": "application/json",
+    })
     try:
-        import sys
-        sys.path.insert(0, '/tmp/pylibs')
-        from selenium import webdriver
-        from selenium.webdriver.chrome.options import Options
-        from selenium.webdriver.chrome.service import Service
-        from webdriver_manager.chrome import ChromeDriverManager
-        from selenium.webdriver.support.ui import WebDriverWait
-        from selenium.webdriver.support import expected_conditions as EC
-        from selenium.webdriver.common.by import By
-    except ImportError:
-        raise RuntimeError("Selenium이 필요합니다: pip install selenium webdriver-manager")
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            return json.load(resp)
+    except urllib.error.HTTPError as e:
+        if e.code == 404:
+            raise ValueError(f"404 Not Found: {url}")
+        raise
 
-    options = Options()
-    options.add_argument("--headless")
-    options.add_argument("--no-sandbox")
-    options.add_argument("--disable-dev-shm-usage")
-    options.add_argument("--disable-gpu")
-    options.add_argument("--window-size=1920,1080")
-    options.add_argument(f"--user-agent={HEADERS['User-Agent']}")
 
-    service = Service(ChromeDriverManager().install())
-    driver  = webdriver.Chrome(service=service, options=options)
+def generate_endoflife(output_dir: Path, product_filter: str = None):
+    targets = ENDOFLIFE_PRODUCTS
+    if product_filter:
+        targets = {k: v for k, v in ENDOFLIFE_PRODUCTS.items()
+                   if product_filter.lower() in k.lower() or product_filter.lower() in v.lower()}
+        if not targets:
+            print(f"  [endoflife.date] 필터 '{product_filter}'에 해당하는 제품 없음")
+            return
 
-    try:
-        driver.get(ADOBE_EOL_URL)
-        WebDriverWait(driver, 15).until(
-            EC.presence_of_element_located((By.TAG_NAME, "table"))
-        )
-        time.sleep(3)
-        return driver.page_source
-    finally:
-        driver.quit()
+    print(f"\n[endoflife.date API] {len(targets)}개 제품 수집")
+    ok_count = 0
+    skip_count = 0
 
-def parse_adobe_eol(html: str):
-    """Adobe EOL Matrix 파싱 → 제품별 분류"""
-    rows = re.findall(r'<tr[^>]*>(.*?)</tr>', html, re.DOTALL)
+    for filename, slug in targets.items():
+        print(f"  {slug:<30}", end=" ", flush=True)
+        try:
+            data = fetch_endoflife_date(slug)
+            out_path = output_dir / filename
+            with open(out_path, "w", encoding="utf-8") as f:
+                json.dump(data, f, indent=2, ensure_ascii=False)
+            print(f"OK  ({len(data)}개 cycle) → {filename}")
+            ok_count += 1
+        except ValueError as e:
+            print(f"SKIP  {e}")
+            skip_count += 1
+        except Exception as e:
+            print(f"ERROR  {e}")
+            skip_count += 1
+        time.sleep(0.3)
 
-    acrobat     = []
-    elements    = []
-    discontinued = []
-
-    for row in rows:
-        cells = re.findall(r'<t[dh][^>]*>(.*?)</t[dh]>', row, re.DOTALL)
-        clean = [re.sub(r'<[^>]+>', '', c).strip().replace('\xa0', '').replace('\n', ' ')
-                 for c in cells]
-        clean = [c for c in clean if c]
-        if len(clean) < 4: continue
-        if 'Product name' in clean[0]: continue
-
-        name, ver = clean[0], clean[1]
-        # GA = col[3], EOL core = col[4]
-        ga_raw  = clean[3] if len(clean) > 3 else ''
-        eol_raw = clean[4] if len(clean) > 4 else ''
-
-        ga  = parse_date_us(ga_raw)
-        eol = parse_date_us(eol_raw)
-        if not ga and not eol: continue
-
-        # Modern Lifecycle 정책 명시 → 스킵 (날짜 없음)
-        if any(x in eol_raw.lower() for x in ['current version','n-1','bug fix','security fix']):
-            continue
-
-        entry = {"cycle": ver, "releaseLabel": f"{name} {ver}",
-                 "releaseDate": ga, "eol": eol if eol else False,
-                 "lts": False, "link": ADOBE_EOL_URL}
-
-        name_l = name.lower()
-
-        # Acrobat 계열
-        if 'acrobat' in name_l and ('pro' in name_l or 'standard' in name_l or 'reader' in name_l):
-            entry["product"] = name
-            acrobat.append(entry)
-
-        # Elements 계열 (Photoshop Elements / Premiere Elements)
-        elif 'photoshop elements' in name_l or 'premiere elements' in name_l:
-            entry["product"] = name
-            elements.append(entry)
-
-        # 완전 종료 제품
-        elif any(x in name_l for x in ['flash player', 'photoshop camera',
-                                         'photoshop sketch', 'muse', 'creative suite',
-                                         'illustrator draw', 'premiere clip']):
-            entry["product"] = name
-            discontinued.append(entry)
-
-    return acrobat, elements, discontinued
-
-def generate_adobe(output_dir: Path):
-    print(f"\n[Adobe EOL Matrix] (Selenium 사용)")
-    print(f"  URL: {ADOBE_EOL_URL}")
-    print(f"  페이지 로딩 중...", end=" ", flush=True)
-
-    try:
-        html = fetch_adobe_eol_html()
-        print(f"OK ({len(html)} bytes)")
-    except Exception as e:
-        print(f"FAILED: {e}")
-        return
-
-    acrobat, elements, discontinued = parse_adobe_eol(html)
-
-    outputs = [
-        ("adobe-acrobat-eol.json",      acrobat,      "Adobe Acrobat (Classic Track)"),
-        ("adobe-elements-eol.json",     elements,     "Adobe Elements (Photoshop/Premiere)"),
-        ("adobe-discontinued-eol.json", discontinued, "Adobe Discontinued Products"),
-    ]
-
-    for filename, data, desc in outputs:
-        if not data:
-            print(f"  [{desc}] → 데이터 없음, 스킵")
-            continue
-        out_path = output_dir / filename
-        with open(out_path, "w", encoding="utf-8") as f:
-            json.dump(data, f, indent=2, ensure_ascii=False)
-        print(f"  [{desc}] → {out_path} ({len(data)}개)")
-
-        # 샘플 출력
-        for entry in data[:2]:
-            print(f"    {entry['releaseLabel']}: eol={entry['eol']}")
+    print(f"\n  endoflife.date 완료: {ok_count}개 성공, {skip_count}개 스킵")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -416,16 +363,16 @@ def generate_adobe(output_dir: Path):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="벤더별 EOL 데이터 수집 (Microsoft Fixed/Modern + Adobe)"
+        description="벤더별 EOL 데이터 수집 (Microsoft Fixed/Modern + endoflife.date)"
     )
     parser.add_argument("--output", "-o",
         default=str(Path(__file__).parent.parent / "files"),
         help="JSON 저장 경로 (기본: ../files)")
     parser.add_argument("--vendor", "-v",
-        choices=["microsoft", "edge", "adobe", "all"], default="all",
+        choices=["microsoft", "edge", "endoflife", "all"], default="all",
         help="수집 벤더 선택 (기본: all)")
     parser.add_argument("--product", "-p", default=None,
-        help="특정 제품만 (예: mssqlserver, acrobat)")
+        help="특정 제품만 (예: mssqlserver, python, nginx)")
     args = parser.parse_args()
 
     output_dir = Path(args.output)
@@ -440,7 +387,7 @@ if __name__ == "__main__":
     if args.vendor in ("edge", "all"):
         generate_edge(output_dir)
 
-    if args.vendor in ("adobe", "all"):
-        generate_adobe(output_dir)
+    if args.vendor in ("endoflife", "all"):
+        generate_endoflife(output_dir, args.product)
 
     print(f"\n완료: {date.today()}")
