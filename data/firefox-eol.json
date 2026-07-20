@@ -3,8 +3,8 @@
     "cycle": "152",
     "releaseDate": "2026-06-16",
     "eol": false,
-    "latest": "152.0.5",
-    "latestReleaseDate": "2026-07-07",
+    "latest": "152.0.6",
+    "latestReleaseDate": "2026-07-14",
     "lts": false
   },
   {
@@ -299,7 +299,7 @@
     "cycle": "115",
     "lts": true,
     "releaseDate": "2023-07-04",
-    "eol": "2026-08-28",
+    "eol": "2027-03-31",
     "latest": "115.37.0",
     "latestReleaseDate": "2026-06-16"
   },
