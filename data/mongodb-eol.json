@@ -3,8 +3,8 @@
     "cycle": "8.3",
     "releaseDate": "2026-05-31",
     "eol": "2029-10-31",
-    "latest": "8.3.4",
-    "latestReleaseDate": "2026-06-15",
+    "latest": "8.3.7",
+    "latestReleaseDate": "2026-07-24",
     "link": "https://www.mongodb.com/docs/manual/release-notes/8.3/",
     "lts": false
   },
