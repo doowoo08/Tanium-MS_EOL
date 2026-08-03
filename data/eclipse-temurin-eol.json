@@ -4,16 +4,16 @@
     "lts": false,
     "releaseDate": "2026-03-23",
     "eol": "2026-09-15",
-    "latest": "26.0.1+8",
-    "latestReleaseDate": "2026-04-29"
+    "latest": "26.0.2+10",
+    "latestReleaseDate": "2026-07-28"
   },
   {
     "cycle": "25",
     "lts": true,
     "releaseDate": "2025-09-22",
     "eol": "2031-09-30",
-    "latest": "25.0.3+9",
-    "latestReleaseDate": "2026-04-22"
+    "latest": "25.0.4+7",
+    "latestReleaseDate": "2026-07-27"
   },
   {
     "cycle": "24",
@@ -100,8 +100,8 @@
     "lts": true,
     "releaseDate": "2021-07-29",
     "eol": "2030-12-31",
-    "latest": "8u492-b09",
-    "latestReleaseDate": "2026-04-29",
+    "latest": "8u502-b07",
+    "latestReleaseDate": "2026-07-31",
     "link": "https://github.com/adoptium/temurin__RELEASE_CYCLE__-binaries/releases/tag/jdk__LATEST__"
   }
 ]

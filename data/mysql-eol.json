@@ -4,8 +4,8 @@
     "releaseDate": "2026-04-21",
     "lts": true,
     "eol": "2034-04-21",
-    "latest": "9.7.1",
-    "latestReleaseDate": "2026-06-03",
+    "latest": "9.7.2",
+    "latestReleaseDate": "2026-07-28",
     "link": "https://dev.mysql.com/doc/relnotes/mysql/9.7/en/news-9-7-0.html",
     "support": true
   },
@@ -83,8 +83,8 @@
     "releaseDate": "2024-04-10",
     "lts": true,
     "eol": "2032-04-30",
-    "latest": "8.4.10",
-    "latestReleaseDate": "2026-06-03",
+    "latest": "8.4.11",
+    "latestReleaseDate": "2026-06-30",
     "support": "2029-04-30"
   },
   {
