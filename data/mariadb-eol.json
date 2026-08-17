@@ -3,7 +3,7 @@
     "cycle": "12.3",
     "releaseDate": "2026-05-28",
     "lts": true,
-    "eol": false,
+    "eol": "2029-06-12",
     "latest": "12.3.2",
     "latestReleaseDate": "2026-05-28",
     "extendedSupport": false
@@ -177,8 +177,8 @@
     "lts": true,
     "releaseDate": "2021-07-06",
     "eol": "2026-07-06",
-    "latest": "10.6.27",
-    "latestReleaseDate": "2026-05-27",
+    "latest": "10.6.28",
+    "latestReleaseDate": "2026-08-13",
     "extendedSupport": "2029-08-23"
   },
   {
