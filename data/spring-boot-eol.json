@@ -4,8 +4,8 @@
     "supportedJavaVersions": "17 - 26",
     "releaseDate": "2026-06-30",
     "eol": "2027-07-31",
-    "latest": "4.1.0",
-    "latestReleaseDate": "2026-06-10",
+    "latest": "4.1.1",
+    "latestReleaseDate": "2026-08-20",
     "lts": false,
     "extendedSupport": "2028-07-31"
   },
@@ -14,8 +14,8 @@
     "supportedJavaVersions": "17 - 25",
     "releaseDate": "2025-11-30",
     "eol": "2026-12-31",
-    "latest": "4.0.7",
-    "latestReleaseDate": "2026-06-10",
+    "latest": "4.0.8",
+    "latestReleaseDate": "2026-08-20",
     "lts": false,
     "extendedSupport": "2027-12-31"
   },
