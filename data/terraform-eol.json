@@ -1,5 +1,13 @@
 [
   {
+    "cycle": "1.16",
+    "releaseDate": "2026-08-26",
+    "eol": false,
+    "latest": "1.16.0",
+    "latestReleaseDate": "2026-08-26",
+    "lts": false
+  },
+  {
     "cycle": "1.15",
     "releaseDate": "2026-04-29",
     "eol": false,
@@ -10,7 +18,7 @@
   {
     "cycle": "1.14",
     "releaseDate": "2025-11-19",
-    "eol": false,
+    "eol": "2026-08-26",
     "latest": "1.14.9",
     "latestReleaseDate": "2026-04-20",
     "lts": false

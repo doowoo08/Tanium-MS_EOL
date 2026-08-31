@@ -3,8 +3,8 @@
     "cycle": "19.3",
     "releaseDate": "2026-08-20",
     "eol": "2026-11-19",
-    "latest": "19.3.0",
-    "latestReleaseDate": "2026-08-20",
+    "latest": "19.3.1",
+    "latestReleaseDate": "2026-08-25",
     "lts": false,
     "support": "2026-09-17"
   },
@@ -12,8 +12,8 @@
     "cycle": "19.2",
     "releaseDate": "2026-07-16",
     "eol": "2026-10-15",
-    "latest": "19.2.4",
-    "latestReleaseDate": "2026-08-14",
+    "latest": "19.2.5",
+    "latestReleaseDate": "2026-08-25",
     "lts": false,
     "support": "2026-08-20"
   },
@@ -21,8 +21,8 @@
     "cycle": "19.1",
     "releaseDate": "2026-06-18",
     "eol": "2026-09-17",
-    "latest": "19.1.6",
-    "latestReleaseDate": "2026-08-14",
+    "latest": "19.1.7",
+    "latestReleaseDate": "2026-08-25",
     "lts": false,
     "support": "2026-07-16"
   },
