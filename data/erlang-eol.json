@@ -3,8 +3,8 @@
     "cycle": "29",
     "releaseDate": "2026-05-11",
     "eol": "2029-05-11",
-    "latest": "29.0.6",
-    "latestReleaseDate": "2026-09-01",
+    "latest": "29.1",
+    "latestReleaseDate": "2026-09-15",
     "lts": false,
     "support": true
   },
