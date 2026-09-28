@@ -1,9 +1,9 @@
 {
-  "latest_major": 153,
-  "latest_version": "153.0.4234.48",
-  "published": "2026-09-20",
+  "latest_major": 154,
+  "latest_version": "154.0.4258.37",
+  "published": "2026-09-26",
   "policy": "Modern Lifecycle - only the latest major version is supported",
   "note": "instMajor >= latest_major → Supported / else → Not Latest",
   "source": "https://edgeupdates.microsoft.com/api/products",
-  "fetched": "2026-09-21"
+  "fetched": "2026-09-28"
 }
