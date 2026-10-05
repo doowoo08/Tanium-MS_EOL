@@ -1,11 +1,18 @@
 [
   {
+    "cycle": "9.0",
+    "releaseDate": "2026-09-30",
+    "eol": "2031-10-31",
+    "latest": "9.0.2",
+    "latestReleaseDate": "2026-09-28",
+    "lts": false
+  },
+  {
     "cycle": "8.3",
     "releaseDate": "2026-05-31",
     "eol": "2029-10-31",
     "latest": "8.3.11",
     "latestReleaseDate": "2026-09-11",
-    "link": "https://www.mongodb.com/docs/manual/release-notes/8.3/",
     "lts": false
   },
   {
@@ -42,6 +49,7 @@
     "eol": "2024-10-02",
     "latest": "7.3.4",
     "latestReleaseDate": "2024-08-14",
+    "link": "https://web.archive.org/web/20250113235154/https://www.mongodb.com/docs/v7.3/release-notes/7.3/",
     "lts": false
   },
   {
@@ -51,6 +59,7 @@
     "eol": "2024-03-27",
     "latest": "7.2.2",
     "latestReleaseDate": "2024-02-28",
+    "link": "https://web.archive.org/web/20241213063317/https://www.mongodb.com/docs/v7.2/release-notes/7.2/",
     "lts": false
   },
   {
@@ -60,6 +69,7 @@
     "eol": "2024-01-23",
     "latest": "7.1.1",
     "latestReleaseDate": "2023-11-16",
+    "link": "https://web.archive.org/web/20241103085639/https://www.mongodb.com/docs/v7.1/release-notes/7.1/",
     "lts": false
   },
   {
