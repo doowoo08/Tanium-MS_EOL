@@ -1,5 +1,15 @@
 [
   {
+    "cycle": "3.15",
+    "releaseDate": "2026-10-09",
+    "eol": "2031-10-31",
+    "latest": "3.15.0",
+    "latestReleaseDate": "2026-10-09",
+    "pep": "PEP-0790",
+    "lts": false,
+    "support": "2028-10-09"
+  },
+  {
     "cycle": "3.14",
     "releaseDate": "2025-10-07",
     "eol": "2030-10-31",
