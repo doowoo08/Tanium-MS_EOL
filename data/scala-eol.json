@@ -1,5 +1,14 @@
 [
   {
+    "cycle": "3.10",
+    "releaseDate": "2026-10-12",
+    "eol": false,
+    "latest": "3.10.0",
+    "latestReleaseDate": "2026-10-12",
+    "lts": false,
+    "support": true
+  },
+  {
     "cycle": "3.9",
     "lts": true,
     "releaseDate": "2026-09-03",

@@ -1,11 +1,31 @@
 [
   {
+    "cycle": "26.10",
+    "releaseDate": "2026-10-20",
+    "eol": false,
+    "latest": "26.10.0",
+    "latestReleaseDate": "2026-10-20",
+    "link": "https://dev.mysql.com/doc/relnotes/mysql/26.10/en/news-26-10-0.html",
+    "lts": false,
+    "support": true
+  },
+  {
+    "cycle": "26.7",
+    "releaseDate": "2026-07-28",
+    "eol": "2026-10-20",
+    "latest": "26.7.1",
+    "latestReleaseDate": "2026-08-18",
+    "link": "https://dev.mysql.com/doc/relnotes/mysql/26.7/en/news-26-7-0.html",
+    "lts": false,
+    "support": "2026-10-20"
+  },
+  {
     "cycle": "9.7",
     "releaseDate": "2026-04-21",
     "lts": true,
     "eol": "2034-04-30",
-    "latest": "9.7.2",
-    "latestReleaseDate": "2026-07-28",
+    "latest": "9.7.4",
+    "latestReleaseDate": "2026-10-20",
     "link": "https://dev.mysql.com/doc/relnotes/mysql/9.7/en/news-9-7-0.html",
     "support": "2031-04-30"
   },
@@ -83,8 +103,8 @@
     "releaseDate": "2024-04-30",
     "lts": true,
     "eol": "2032-04-30",
-    "latest": "8.4.11",
-    "latestReleaseDate": "2026-06-30",
+    "latest": "8.4.13",
+    "latestReleaseDate": "2026-09-30",
     "support": "2029-04-30"
   },
   {
